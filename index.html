@@ -1,0 +1,643 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RajCricket Since 1992 | Cricket Analysis</title>
+  <meta name="description" content="Explore major T20 cricket leagues with RajCricket Since 1992. Connect with our cricket analysis community on WhatsApp.">
+  <meta name="theme-color" content="#07140f">
+
+  <style>
+    :root {
+      --bg: #07140f;
+      --panel: #10251b;
+      --green: #25D366;
+      --light: #eaffef;
+      --muted: #b6c9bb;
+      --gold: #f5ce76;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1120px, 91%);
+      margin: auto;
+    }
+
+    header {
+      padding: 19px 0;
+      border-bottom: 1px solid #ffffff15;
+      background: #07140ff5;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+
+    .brand span { color: var(--green); }
+
+    .since {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    .nav-link {
+      border: 1px solid #25d36680;
+      border-radius: 30px;
+      padding: 9px 14px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 66px 0 48px;
+      background:
+        linear-gradient(90deg, #07140ff5 0%, #07140fdc 43%, #07140f55 100%),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1800&q=85")
+        center 43% / cover no-repeat;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid #f5ce7666;
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 70px);
+      line-height: 1.06;
+      max-width: 760px;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span { color: var(--green); }
+
+    .hero p {
+      max-width: 570px;
+      color: #e0eae2;
+      margin: 22px 0;
+      font-size: 16px;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      width: min(100%, 410px);
+      padding: 17px 20px;
+      border-radius: 12px;
+      background: var(--green);
+      color: #062010;
+      font-size: 17px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 28px #25d36630;
+      transition: transform .2s, background .2s;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      background: #42e879;
+    }
+
+    .wa-icon {
+      width: 29px;
+      height: 29px;
+      flex-shrink: 0;
+    }
+
+    .small-note {
+      color: #c3d1c7;
+      font-size: 11px;
+      margin-top: 11px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 22px 0;
+    }
+
+    .stat {
+      background: #10251b;
+      border: 1px solid #ffffff0d;
+      border-radius: 12px;
+      padding: 18px 8px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-size: clamp(17px, 3vw, 24px);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    section { padding: 48px 0; }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-title span { color: var(--green); }
+
+    .section-desc {
+      text-align: center;
+      color: var(--muted);
+      max-width: 630px;
+      margin: 0 auto 30px;
+      font-size: 14px;
+    }
+
+    .league-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+    }
+
+    .league {
+      background: var(--panel);
+      border: 1px solid #ffffff12;
+      border-radius: 12px;
+      padding: 21px 12px;
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .league:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    .league .emoji {
+      font-size: 29px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .league strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .league small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .analyst {
+      background: linear-gradient(135deg, #11291c, #0a1a12);
+      border: 1px solid #25d36635;
+      border-radius: 20px;
+      padding: 32px 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .analyst img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 13px;
+    }
+
+    .analyst h2 {
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .analyst h2 span { color: var(--gold); }
+
+    .analyst p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 23px;
+    }
+
+    .features li {
+      margin: 9px 0;
+      font-size: 13px;
+      color: #e1eee4;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .join-section {
+      text-align: center;
+      padding: 48px 22px;
+      background:
+        linear-gradient(#07140fe8, #07140ff0),
+        url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1400&q=80")
+        center / cover no-repeat;
+      border: 1px solid #ffffff10;
+      border-radius: 20px;
+    }
+
+    .join-section p {
+      color: #d2e1d6;
+      max-width: 550px;
+      margin: 13px auto 24px;
+      font-size: 14px;
+    }
+
+    .join-section .cta { margin: auto; }
+
+    .disclaimer {
+      background: #0b1b13;
+      border-top: 1px solid #ffffff15;
+      margin-top: 48px;
+      padding: 26px 0;
+    }
+
+    .disclaimer h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+
+    .disclaimer p {
+      font-size: 11px;
+      color: #aebfb3;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0 30px;
+      color: #94a99a;
+      font-size: 11px;
+    }
+
+    .footer-brand {
+      font-size: 18px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand span { color: var(--green); }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 53px 0 42px;
+        background-position: 58% center;
+      }
+
+      .league-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .analyst {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .analyst img { height: 220px; }
+
+      .stats { gap: 7px; }
+      .stat { padding: 14px 5px; }
+      section { padding: 36px 0; }
+
+      .brand { font-size: 17px; }
+      .nav-link { padding: 8px 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" aria-label="RajCricket home">
+        <div class="brand">RAJ<span>CRICKET</span></div>
+        <span class="since">SINCE 1992</span>
+      </a>
+
+      <a class="nav-link" href="#join">CONNECT WITH US ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">THE WORLD OF T20 CRICKET</span>
+
+        <h1>
+          Every League.<br>
+          Every Match.<br>
+          <span>Cricket Insights.</span>
+        </h1>
+
+        <p>
+          Welcome to RajCricket Since 1992 — your destination for
+          cricket discussions, match previews, team analysis and
+          updates from major T20 leagues around the world.
+        </p>
+
+        <a class="cta" href="https://wa.me/918306559406?text=Hi%20RajCricket"
+           target="_blank" rel="noopener noreferrer">
+          <svg class="wa-icon" viewBox="0 0 32 32"
+               aria-hidden="true" fill="currentColor">
+            <path d="M16 .8A15 15 0 0 0 3.1 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .8zm0 27.4c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.2zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.3-.5.3-.9.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.3s1.4 3.8 1.6 4c.2.3 2.8 4.3 6.8 6 .9.4 1.6.6 2.1.7.9.3 1.8.2 2.4.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
+          </svg>
+          JOIN ON WHATSAPP
+        </a>
+
+        <div class="small-note">
+          Connect with RajCricket • Cricket analysis and community updates
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats">
+      <div class="stat">
+        <strong>Since 1992</strong>
+        <span>Our brand identity</span>
+      </div>
+      <div class="stat">
+        <strong>Global T20</strong>
+        <span>Leagues & tournaments</span>
+      </div>
+      <div class="stat">
+        <strong>Cricket First</strong>
+        <span>Analysis & discussion</span>
+      </div>
+    </div>
+
+    <section id="leagues">
+      <div class="container">
+        <h2 class="section-title">Explore Major <span>T20 Leagues</span></h2>
+        <p class="section-desc">
+          Follow the teams, players and tournaments that make
+          international franchise cricket exciting.
+        </p>
+
+        <div class="league-grid">
+          <div class="league">
+            <span class="emoji">🏆</span>
+            <strong>IPL</strong>
+            <small>Indian Premier League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🏏</span>
+            <strong>WPL</strong>
+            <small>Women's Premier League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🇦🇺</span>
+            <strong>BBL</strong>
+            <small>Big Bash League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">⭐</span>
+            <strong>WBBL</strong>
+            <small>Women's Big Bash League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🇵🇰</span>
+            <strong>PSL</strong>
+            <small>Pakistan Super League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🌴</span>
+            <strong>CPL</strong>
+            <small>Caribbean Premier League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🇿🇦</span>
+            <strong>SA20</strong>
+            <small>South Africa</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🌍</span>
+            <strong>ILT20</strong>
+            <small>International League T20</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🇺🇸</span>
+            <strong>MLC</strong>
+            <small>Major League Cricket</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🇱🇰</span>
+            <strong>LPL</strong>
+            <small>Lanka Premier League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🇧🇩</span>
+            <strong>BPL</strong>
+            <small>Bangladesh Premier League</small>
+          </div>
+
+          <div class="league">
+            <span class="emoji">🌐</span>
+            <strong>International T20</strong>
+            <small>Selected global matches</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="analyst">
+          <img
+            src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=85"
+            alt="Cricket stadium during a match"
+            loading="lazy">
+
+          <div>
+            <span class="eyebrow">WELCOME TO RAJCRICKET</span>
+
+            <h2>India's Best<br><span>Cricket Analyst</span></h2>
+
+            <p>
+              Discover a cricket-focused community built around
+              match previews, team combinations, player form and
+              discussions about the game.
+            </p>
+
+            <ul class="features">
+              <li>Match previews and cricket insights</li>
+              <li>Team and player performance discussions</li>
+              <li>Major domestic and international T20 leagues</li>
+              <li>Community updates through WhatsApp</li>
+            </ul>
+
+            <a class="cta"
+               href="https://wa.me/918306559406?text=Hi%20RajCricket"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="wa-icon" viewBox="0 0 32 32"
+                   aria-hidden="true" fill="currentColor">
+                <path d="M16 .8A15 15 0 0 0 3.1 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .8zm0 27.4c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.2z"/>
+              </svg>
+              CHAT WITH RAJCRICKET
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="container">
+        <div class="join-section">
+          <span class="eyebrow">YOUR CRICKET COMMUNITY</span>
+
+          <h2 class="section-title">
+            Let's Talk <span>Cricket!</span>
+          </h2>
+
+          <p>
+            Want to connect with RajCricket? Open WhatsApp and
+            send us a message to learn more about our cricket
+            analysis and community updates.
+          </p>
+
+          <a class="cta"
+             href="https://wa.me/918306559406?text=Hi%20RajCricket"
+             target="_blank" rel="noopener noreferrer">
+            <svg class="wa-icon" viewBox="0 0 32 32"
+                 aria-hidden="true" fill="currentColor">
+              <path d="M16 .8A15 15 0 0 0 3.1 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .8zm0 27.4c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.3 12.3 0 1 1 16 28.2z"/>
+            </svg>
+            JOIN ON WHATSAPP
+          </a>
+
+          <div class="small-note">
+            WhatsApp will open with a pre-filled message.
+            You choose whether to send it.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="disclaimer">
+    <div class="container">
+      <h3>DISCLAIMER & IMPORTANT INFORMATION</h3>
+
+      <p>
+        RajCricket provides cricket-related information, commentary
+        and analysis for general informational and entertainment
+        purposes. Cricket analysis is subjective and does not
+        guarantee match results, accuracy or profits.
+      </p>
+
+      <p>
+        RajCricket is an independent cricket content brand and is
+        not affiliated with, sponsored by, or officially associated
+        with the IPL, WPL, BCCI, ICC or any other league or
+        governing body mentioned on this page. League names are
+        used solely to identify the competitions discussed.
+      </p>
+
+      <p>
+        This page does not offer betting transactions or promise
+        guaranteed predictions or financial returns. Please follow
+        applicable local laws and platform rules. Do not gamble
+        with money you cannot afford to lose.
+      </p>
+
+      <p>
+        Cricket images are illustrative and sourced from Unsplash.
+        League names and abbreviations belong to their respective
+        owners. This page does not imply official endorsement.
+      </p>
+
+      <p>
+        Contact: +91 83065 59406
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">RAJ<span>CRICKET</span></div>
+      <div>SINCE 1992</div>
+      <p>Cricket insights. Global leagues. One community.</p>
+      <p style="margin-top:10px">
+        © <span id="year">2026</span> RajCricket. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
